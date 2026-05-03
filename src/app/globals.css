@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  --color-purple-glow: #7c3aed;
+  --color-dark-bg: #0f0f1a;
+  --color-dark-card: #1a1a2e;
+  --color-dark-border: #2a2a4a;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #7c3aed20 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #7c3aed40;
+  border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #7c3aed60;
+}
+
+body {
+  background: #0f0f1a;
+  color: #e2e8f0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(124, 58, 237, 0.15); }
+  50% { box-shadow: 0 0 30px rgba(124, 58, 237, 0.3); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+.glass {
+  background: rgba(26, 26, 46, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(124, 58, 237, 0.15);
+}
+
+.glass-hover:hover {
+  background: rgba(26, 26, 46, 0.85);
+  border-color: rgba(124, 58, 237, 0.35);
+  box-shadow: 0 0 25px rgba(124, 58, 237, 0.15);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #6d28d9, #9333ea);
+  box-shadow: 0 0 25px rgba(124, 58, 237, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(124, 58, 237, 0.2);
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #7c3aed !important;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+}
